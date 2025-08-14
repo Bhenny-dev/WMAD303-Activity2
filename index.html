@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WMAD303-Activity 2</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      position: relative;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://wallpaperaccess.com/full/628286.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+
+    .base {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      color: #f8f8f8;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    h1#header {
+      color: #ffdb70;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    }
+
+    h2 {
+      color: #aadfff;
+      margin-top: 30px;
+    }
+
+    img {
+      width: 150px;
+      height: auto;
+      border-radius: 50%;
+      margin: 20px auto;
+      display: block;
+      border: 3px solid #fff;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      margin-top: 10px;
+    }
+
+    li {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    #changeBtn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: rgba(12, 135, 236, 0.8);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #fff;
+      transition: background-color 0.3s;
+    }
+
+    #changeBtn:hover {
+      background-color: rgba(12, 135, 236, 1);
+    }
+
+    /* Add spacing at the bottom to avoid cut-off on scroll */
+    .spacer {
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay" id="bgOverlay"></div>
+
+  <div class="base">
+    <h1 id="header">I'm Back!</h1>
+    <p><i>Hi! My name is Bhenny Benlor Daysa Rivera.</i></p>
+    <img src="https://avatars.githubusercontent.com/u/139185044?v=4" alt="A cartooned boy with curly hair">
+    
+    <h2>Class Expectation</h2>
+    <ul>
+      <li>I hope our class fosters an interactive environment where we can learn, grow, and refine our skills together.</li>
+      <li>I look forward to gaining knowledge while building meaningful connections with my classmates.</li>
+      <li>I believe this class will be enjoyable and that we’ll collaborate enthusiastically and respectfully with one another.</li>
+    </ul>
+
+    <h2>Subject Expectations</h2>
+    <ul>
+      <li>My classmates and I will confidently engage with the activities and lessons presented throughout the course.</li>
+      <li>I expect the subject to provide us with valuable insights and practical knowledge.</li>
+      <li>We will be encouraged to think critically and creatively as we explore each topic.</li>
+    </ul>
+
+    <h2>Future Expectations</h2>
+    <ul>
+      <li>To discover meaningful opportunities that align with our passions and skills.</li>
+      <li>To design and develop impressive websites and applications that reflect our creativity and technical expertise.</li>
+      <li>To apply our learning to real-world scenarios and prepare for future professional challenges.</li>
+    </ul>
+
+    <button id="changeBtn">Change Scenery</button>
+  </div>
+
+  <!-- Add some extra space so content doesn't get cut off when scrolled -->
+  <div class="spacer"></div>
+
+  <script>
+    const backgrounds = [
+      'https://wallpaperaccess.com/full/628286.jpg',
+      'https://wallpaperaccess.com/full/3339086.jpg',
+      'https://wallpaperaccess.com/full/3048921.jpg',
+      'https://wallpaperaccess.com/full/4545953.jpg',
+      'https://wallpaperaccess.com/full/2334886.jpg',
+      'https://wallpaperaccess.com/full/3339088.jpg',
+      'https://wallpaperaccess.com/full/2952830.jpg',
+      'https://wallpaperaccess.com/full/3339083.jpg',
+      'https://wallpaperaccess.com/full/3339091.jpg',
+      'https://wallpaperaccess.com/full/2334798.jpg',
+      'https://wallpaperaccess.com/full/4937869.jpg',
+      'https://wallpaperaccess.com/full/2404322.jpg',
+      'https://wallpaperaccess.com/full/3048957.jpg'
+    ];
+
+    let current = 0;
+    const overlay = document.getElementById('bgOverlay');
+
+    document.getElementById('changeBtn').onclick = () => {
+      current = (current + 1) % backgrounds.length;
+      overlay.style.backgroundImage = `url('${backgrounds[current]}')`;
+    };
+  </script>
+</body>
+</html>
